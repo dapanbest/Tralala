@@ -32,29 +32,33 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(traFrmMain));
             this.rootSpliter = new System.Windows.Forms.SplitContainer();
             this.userSpliter = new System.Windows.Forms.SplitContainer();
-            this.codes = new System.Windows.Forms.RichTextBox();
             this.logs = new System.Windows.Forms.RichTextBox();
             this.mouseMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmdCopyLog = new System.Windows.Forms.ToolStripMenuItem();
             this.cmdClearLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.codes = new System.Windows.Forms.RichTextBox();
             this.outputSpliter = new System.Windows.Forms.SplitContainer();
             this.tokens = new System.Windows.Forms.ListView();
+            this.syntaxs = new System.Windows.Forms.ListView();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAnalyse = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmdLexical = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmdSyntax = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusBar = new System.Windows.Forms.StatusStrip();
-            this.tips = new System.Windows.Forms.ToolStripStatusLabel();
-            this.syntaxs = new System.Windows.Forms.ListView();
             this.cmdImportCode = new System.Windows.Forms.ToolStripMenuItem();
             this.cmdExportLog = new System.Windows.Forms.ToolStripMenuItem();
             this.cmdExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmdInputLit = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmdImportLit = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAnalyse = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmdLexical = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmdSyntax = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusBar = new System.Windows.Forms.StatusStrip();
+            this.tips = new System.Windows.Forms.ToolStripStatusLabel();
             this.opener = new System.Windows.Forms.OpenFileDialog();
             this.saver = new System.Windows.Forms.SaveFileDialog();
-            this.cmdImportLit = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmdInputLit = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmdInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmdAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmdHome = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.rootSpliter)).BeginInit();
             this.rootSpliter.Panel1.SuspendLayout();
             this.rootSpliter.Panel2.SuspendLayout();
@@ -119,22 +123,6 @@
             this.userSpliter.TabIndex = 0;
             this.userSpliter.TabStop = false;
             // 
-            // codes
-            // 
-            this.codes.AcceptsTab = true;
-            this.codes.BackColor = System.Drawing.Color.White;
-            this.codes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.codes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.codes.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.codes.Location = new System.Drawing.Point(0, 0);
-            this.codes.Name = "codes";
-            this.codes.Size = new System.Drawing.Size(635, 127);
-            this.codes.TabIndex = 0;
-            this.codes.Text = "";
-            this.codes.WordWrap = false;
-            this.codes.SelectionChanged += new System.EventHandler(this.codes_SelectionChanged);
-            this.codes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codes_KeyPress);
-            // 
             // logs
             // 
             this.logs.BackColor = System.Drawing.Color.White;
@@ -172,6 +160,22 @@
             this.cmdClearLog.Text = "清空日志";
             this.cmdClearLog.Click += new System.EventHandler(this.cmdClearLog_Click);
             // 
+            // codes
+            // 
+            this.codes.AcceptsTab = true;
+            this.codes.BackColor = System.Drawing.Color.White;
+            this.codes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.codes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.codes.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.codes.Location = new System.Drawing.Point(0, 0);
+            this.codes.Name = "codes";
+            this.codes.Size = new System.Drawing.Size(635, 127);
+            this.codes.TabIndex = 0;
+            this.codes.Text = "";
+            this.codes.WordWrap = false;
+            this.codes.SelectionChanged += new System.EventHandler(this.codes_SelectionChanged);
+            this.codes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codes_KeyPress);
+            // 
             // outputSpliter
             // 
             this.outputSpliter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -208,12 +212,27 @@
             this.tokens.UseCompatibleStateImageBehavior = false;
             this.tokens.View = System.Windows.Forms.View.Details;
             // 
+            // syntaxs
+            // 
+            this.syntaxs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.syntaxs.FullRowSelect = true;
+            this.syntaxs.LabelWrap = false;
+            this.syntaxs.Location = new System.Drawing.Point(0, 0);
+            this.syntaxs.MultiSelect = false;
+            this.syntaxs.Name = "syntaxs";
+            this.syntaxs.Size = new System.Drawing.Size(297, 273);
+            this.syntaxs.TabIndex = 0;
+            this.syntaxs.TabStop = false;
+            this.syntaxs.UseCompatibleStateImageBehavior = false;
+            this.syntaxs.View = System.Windows.Forms.View.Details;
+            // 
             // menu
             // 
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuFile,
             this.menuEdit,
-            this.menuAnalyse});
+            this.menuAnalyse,
+            this.menuHelp});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(944, 25);
@@ -229,6 +248,56 @@
             this.menuFile.Name = "menuFile";
             this.menuFile.Size = new System.Drawing.Size(58, 21);
             this.menuFile.Text = "文件(&F)";
+            // 
+            // cmdImportCode
+            // 
+            this.cmdImportCode.Name = "cmdImportCode";
+            this.cmdImportCode.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.cmdImportCode.Size = new System.Drawing.Size(169, 22);
+            this.cmdImportCode.Text = "导入代码";
+            this.cmdImportCode.Click += new System.EventHandler(this.cmdImportCode_Click);
+            // 
+            // cmdExportLog
+            // 
+            this.cmdExportLog.Name = "cmdExportLog";
+            this.cmdExportLog.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.cmdExportLog.Size = new System.Drawing.Size(169, 22);
+            this.cmdExportLog.Text = "导出日志";
+            this.cmdExportLog.Click += new System.EventHandler(this.cmdExportLog_Click);
+            // 
+            // cmdExit
+            // 
+            this.cmdExit.Name = "cmdExit";
+            this.cmdExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.cmdExit.Size = new System.Drawing.Size(169, 22);
+            this.cmdExit.Text = "退出程序";
+            this.cmdExit.Click += new System.EventHandler(this.cmdExit_Click);
+            // 
+            // menuEdit
+            // 
+            this.menuEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmdInputLit,
+            this.cmdImportLit});
+            this.menuEdit.Name = "menuEdit";
+            this.menuEdit.Size = new System.Drawing.Size(58, 21);
+            this.menuEdit.Text = "文法(&L)";
+            // 
+            // cmdInputLit
+            // 
+            this.cmdInputLit.Name = "cmdInputLit";
+            this.cmdInputLit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.cmdInputLit.Size = new System.Drawing.Size(213, 22);
+            this.cmdInputLit.Text = "编辑文法";
+            this.cmdInputLit.Click += new System.EventHandler(this.CmdInputLit_Click);
+            // 
+            // cmdImportLit
+            // 
+            this.cmdImportLit.Name = "cmdImportLit";
+            this.cmdImportLit.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.L)));
+            this.cmdImportLit.Size = new System.Drawing.Size(213, 22);
+            this.cmdImportLit.Text = "从文件导入";
+            this.cmdImportLit.Click += new System.EventHandler(this.CmdImportLit_Click);
             // 
             // menuAnalyse
             // 
@@ -255,14 +324,15 @@
             this.cmdSyntax.Text = "语法分析";
             this.cmdSyntax.Click += new System.EventHandler(this.cmdSyntax_Click);
             // 
-            // menuEdit
+            // menuHelp
             // 
-            this.menuEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmdInputLit,
-            this.cmdImportLit});
-            this.menuEdit.Name = "menuEdit";
-            this.menuEdit.Size = new System.Drawing.Size(58, 21);
-            this.menuEdit.Text = "文法(&L)";
+            this.menuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmdInfo,
+            this.cmdHome,
+            this.cmdAbout});
+            this.menuHelp.Name = "menuHelp";
+            this.menuHelp.Size = new System.Drawing.Size(61, 21);
+            this.menuHelp.Text = "帮助(&H)";
             // 
             // statusBar
             // 
@@ -279,44 +349,6 @@
             this.tips.Size = new System.Drawing.Size(70, 17);
             this.tips.Text = "行 1    列 1";
             // 
-            // syntaxs
-            // 
-            this.syntaxs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.syntaxs.FullRowSelect = true;
-            this.syntaxs.LabelWrap = false;
-            this.syntaxs.Location = new System.Drawing.Point(0, 0);
-            this.syntaxs.MultiSelect = false;
-            this.syntaxs.Name = "syntaxs";
-            this.syntaxs.Size = new System.Drawing.Size(297, 273);
-            this.syntaxs.TabIndex = 0;
-            this.syntaxs.TabStop = false;
-            this.syntaxs.UseCompatibleStateImageBehavior = false;
-            this.syntaxs.View = System.Windows.Forms.View.Details;
-            // 
-            // cmdImportCode
-            // 
-            this.cmdImportCode.Name = "cmdImportCode";
-            this.cmdImportCode.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.cmdImportCode.Size = new System.Drawing.Size(169, 22);
-            this.cmdImportCode.Text = "导入代码";
-            this.cmdImportCode.Click += new System.EventHandler(this.cmdImportCode_Click);
-            // 
-            // cmdExportLog
-            // 
-            this.cmdExportLog.Name = "cmdExportLog";
-            this.cmdExportLog.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.cmdExportLog.Size = new System.Drawing.Size(169, 22);
-            this.cmdExportLog.Text = "导出日志";
-            this.cmdExportLog.Click += new System.EventHandler(this.cmdExportLog_Click);
-            // 
-            // cmdExit
-            // 
-            this.cmdExit.Name = "cmdExit";
-            this.cmdExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.cmdExit.Size = new System.Drawing.Size(169, 22);
-            this.cmdExit.Text = "退出程序";
-            this.cmdExit.Click += new System.EventHandler(this.cmdExit_Click);
-            // 
             // opener
             // 
             this.opener.Filter = "文本文件|*.txt";
@@ -327,22 +359,31 @@
             this.saver.DefaultExt = "txt";
             this.saver.Filter = "文本文件|*.txt";
             // 
-            // cmdImportLit
+            // cmdInfo
             // 
-            this.cmdImportLit.Name = "cmdImportLit";
-            this.cmdImportLit.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.L)));
-            this.cmdImportLit.Size = new System.Drawing.Size(213, 22);
-            this.cmdImportLit.Text = "从文件导入";
-            this.cmdImportLit.Click += new System.EventHandler(this.CmdImportLit_Click);
+            this.cmdInfo.Name = "cmdInfo";
+            this.cmdInfo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
+            this.cmdInfo.Size = new System.Drawing.Size(198, 22);
+            this.cmdInfo.Text = "使用说明";
+            this.cmdInfo.Click += new System.EventHandler(this.cmdInfo_Click);
             // 
-            // cmdInputLit
+            // cmdAbout
             // 
-            this.cmdInputLit.Name = "cmdInputLit";
-            this.cmdInputLit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.cmdInputLit.Size = new System.Drawing.Size(213, 22);
-            this.cmdInputLit.Text = "编辑文法";
-            this.cmdInputLit.Click += new System.EventHandler(this.CmdInputLit_Click);
+            this.cmdAbout.Name = "cmdAbout";
+            this.cmdAbout.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.F1)));
+            this.cmdAbout.Size = new System.Drawing.Size(198, 22);
+            this.cmdAbout.Text = "关于";
+            this.cmdAbout.Click += new System.EventHandler(this.cmdAbout_Click);
+            // 
+            // cmdHome
+            // 
+            this.cmdHome.Name = "cmdHome";
+            this.cmdHome.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.F1)));
+            this.cmdHome.Size = new System.Drawing.Size(198, 22);
+            this.cmdHome.Text = "项目主页";
+            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
             // traFrmMain
             // 
@@ -409,6 +450,10 @@
         private System.Windows.Forms.SaveFileDialog saver;
         private System.Windows.Forms.ToolStripMenuItem cmdImportLit;
         private System.Windows.Forms.ToolStripMenuItem cmdInputLit;
+        private System.Windows.Forms.ToolStripMenuItem menuHelp;
+        private System.Windows.Forms.ToolStripMenuItem cmdInfo;
+        private System.Windows.Forms.ToolStripMenuItem cmdAbout;
+        private System.Windows.Forms.ToolStripMenuItem cmdHome;
     }
 }
 

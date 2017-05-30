@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Tralala
 {
-    enum LogType { INFO, WARNING, ERROR };
+    enum LogType { INFO, FRIENDLY, ERROR };
 
     public partial class traFrmMain : Form
     {
@@ -305,8 +305,8 @@ namespace Tralala
                 case LogType.INFO:
                     logs.SelectionColor = Color.Black;
                     break;
-                case LogType.WARNING:
-                    logs.SelectionColor = Color.Yellow;
+                case LogType.FRIENDLY:
+                    logs.SelectionColor = Color.Green;
                     break;
                 case LogType.ERROR:
                     logs.SelectionColor = Color.Red;
@@ -509,6 +509,30 @@ namespace Tralala
             {
                 showLog("无法打开文件\"" + path + "\"，请重试。", true, LogType.ERROR);
             }
+        }
+
+        private void cmdHome_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/dapanbest/Tralala");
+        }
+
+        private void cmdInfo_Click(object sender, EventArgs e)
+        {
+            showLog("一则很简单的使用说明", false, LogType.FRIENDLY);
+            showLog("您必须首先输入文法，然后才能进行语法分析。" +
+                "您可以在“文法”菜单中选择输入文法的方式。", false, LogType.FRIENDLY);
+            showLog("输入文法之后，您需要输入代码，然后可以开始进行分析。" +
+                "点击“词法分析”命令分析词法，点击“语法分析”命令分析词法和语法。"
+                , false, LogType.FRIENDLY);
+            showLog("词法结果显示在右上角，非终结符的First和Follow显示在右下角，" +
+                "分析详情显示在日志对话框。", false, LogType.FRIENDLY);
+            showLog("您可以在“文件”菜单中导入代码，也可以将日志导出到文本文件。"
+                , false, LogType.FRIENDLY);
+        }
+
+        private void cmdAbout_Click(object sender, EventArgs e)
+        {
+            new traFrmAbout().ShowDialog();
         }
     }
 }

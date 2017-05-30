@@ -62,7 +62,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 361);
+            this.ClientSize = new System.Drawing.Size(381, 364);
             this.Controls.Add(this.cmdOk);
             this.Controls.Add(this.input);
             this.Font = new System.Drawing.Font("微软雅黑", 9F);
